@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Site made with Mobirise Website Builder v4.11.6, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta name="authoring-tool" content="Adobe_Animate_CC">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.11.6, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/mip-logo-logo-122x122.png" type="image/x-icon">
+    <meta name="description" content="">
+
+    <title>Season's Tales</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+    <link rel="stylesheet" href="custom.css">
+
+    <!-- winter canvas -->
+    <style>
+        #animation_container {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="biboon.js?1575582764509"></script>
+    <script>
+        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+        function init() {
+            canvas = document.getElementById("canvas");
+            anim_container = document.getElementById("animation_container");
+            dom_overlay_container = document.getElementById("dom_overlay_container");
+            var comp = AdobeAn.getComposition("480AFB40FBC34731B8386C1721E4FF8A");
+            var lib = comp.getLibrary();
+            var loader = new createjs.LoadQueue(false);
+            loader.addEventListener("fileload", function (evt) { handleFileLoad(evt, comp) });
+            loader.addEventListener("complete", function (evt) { handleComplete(evt, comp) });
+            var lib = comp.getLibrary();
+            loader.loadManifest(lib.properties.manifest);
+        }
+        function handleFileLoad(evt, comp) {
+            var images = comp.getImages();
+            if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+        }
+        function handleComplete(evt, comp) {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            var lib = comp.getLibrary();
+            var ss = comp.getSpriteSheet();
+            var queue = evt.target;
+            var ssMetadata = lib.ssMetadata;
+            for (i = 0; i < ssMetadata.length; i++) {
+                ss[ssMetadata[i].name] = new createjs.SpriteSheet({ "images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames })
+            }
+            exportRoot = new lib.biboon();
+            stage = new lib.Stage(canvas);
+            //Registers the "tick" event listener.
+            fnStartAnimation = function () {
+                stage.addChild(exportRoot);
+                createjs.Ticker.setFPS(lib.properties.fps);
+                createjs.Ticker.addEventListener("tick", stage);
+            }
+            //Code to support hidpi screens and responsive scaling.
+            AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, anim_container, dom_overlay_container]);
+            AdobeAn.compositionLoaded(lib.properties.id);
+            fnStartAnimation();
+        }
+    </script>
+
+</head>
+
+<body onload="init();" style="margin:0px;">
+    <section class="menu cid-rIZbRxmQU1" once="menu" id="menu1-4">
+
+
+
+        <nav
+            class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="menu-logo">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="https://mobirise.co">
+                            <img src="assets/images/mip-logo-logo-122x122.png" alt="Mobirise" title=""
+                                style="height: 3.8rem;">
+                        </a>
+                    </span>
+
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="index.html#header5-i">
+
+                            Spring<br></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="index.html#header5-j">
+
+                            Summer</a></li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="index.html#header5-k">
+
+                            Fall</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="index.html#header5-h">
+                            Winter &nbsp;</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </section>
+
+    <section class="engine"><a href="https://mobirise.info/s">Season's Tales</a></section>
+    <section class="header11 cid-rIZcerIQKH mbr-fullscreen" id="header11-7">
+
+        <!-- Block parameters controls (Blue "Gear" panel) -->
+
+        <!-- End block parameters -->
+
+
+        <div class="container align-left">
+            <div class="media-container-column mbr-white col-md-12">
+
+                <h1 class="mbr-section-title py-3 mbr-fonts-style display-1">Season's Tales</h1>
+                <p class="mbr-text py-3 mbr-fonts-style display-5">Explore and take a scroll through the seasons
+                    experienced here in Ontario. Learn about First Nation's perspectives and teachings about nature,
+                    wildlife, and hollistic ways of life.</p>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="header5 cid-rIZkrSSuyJ mbr-fullscreen" id="header5-i">
+
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="mbr-white col-md-10">
+                    <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
+                        ziigwan</h1>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="tabs1 cid-rIZkzMGxrx mbr-parallax-background" id="tabs1-l">
+
+
+
+        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);">
+        </div>
+        <div class="container">
+            <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">minoskamin</h2>
+            <div class="media-container-row">
+                <div class="col-12 col-md-8">
+
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane in active" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
+                                        Minoskamin is the 'break up' season. During this second season snow and ice are
+                                        melting so the people start preparing to transition with the weather for the
+                                        next couple of months.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- text -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="header5 cid-rIZkskKC5v mbr-fullscreen" id="header5-j">
+
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="mbr-white col-md-10">
+                    <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
+                        neebin</h1>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="header5 cid-rIZksGF9Me mbr-fullscreen" id="header5-k">
+
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="mbr-white col-md-10">
+                    <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
+                        dawaagin</h1>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="tabs1 cid-rIZkGcLwp0 mbr-parallax-background" id="tabs1-m">
+
+
+
+        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);">
+        </div>
+        <div class="container">
+            <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">
+                migiskaw</h2>
+            <div class="media-container-row">
+                <div class="col-12 col-md-8">
+
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane in active" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
+                                        Migiskaw is the 'freeze up' season. This 5th season is when the waters freeze
+                                        over so people would start preparing to transition with the weather for the next
+                                        couple of months.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- text -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="header5 cid-rIZk2E8TAb mbr-fullscreen" id="header5-h">
+
+
+
+
+        <!-- <div class="container">
+            <div class="row justify-content-center">
+                <div class="mbr-white col-md-10">
+                    <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
+                        biboon</h1>
+                        
+
+                </div>
+                
+            </div>
+            
+        </div> -->
+        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
+            <canvas id="canvas" width="1920" height="1280"
+                style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+            <div id="dom_overlay_container"
+                style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: block;">
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="header11 cid-rIZkKMD1vH" id="header11-n">
+
+        <!-- Block parameters controls (Blue "Gear" panel) -->
+
+        <!-- End block parameters -->
+
+
+        <div class="container align-left">
+            <div class="media-container-column mbr-white col-md-12">
+
+                <h1 class="mbr-section-title py-3 mbr-fonts-style display-1">
+                    About Season's Tale & The Creator
+                </h1>
+                <p class="mbr-text py-3 mbr-fonts-style display-5">
+                    This educational website was designed and developed by Rose Skead aka rskead.
+                </p>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="cid-rIZd8Ej8Io" id="social-buttons1-c">
+
+
+
+
+
+        <div class="container">
+            <div class="media-container-row">
+                <div class="col-md-8 align-center">
+                    <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">
+                        SHARE SEASON'S TALES!<br></h2>
+                    <div>
+                        <div class="mbr-social-likes" data-counters="false">
+                            <span class="btn btn-social facebook mx-2" title="Share link on Facebook">
+                                <i class="socicon socicon-facebook"></i>
+                            </span>
+                            <span class="btn btn-social twitter mx-2" title="Share link on Twitter">
+                                <i class="socicon socicon-twitter"></i>
+                            </span>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section once="footers" class="cid-rIZdyQK0iF" id="footer6-f">
+
+
+
+
+
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="col-12">
+                    <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                        © Copyright 2019 Season's Tales by rskead</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/popper/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/mbr-tabs/mbr-tabs.js"></script>
+    <script src="assets/parallax/jarallax.min.js"></script>
+    <script src="assets/sociallikes/social-likes.js"></script>
+    <script src="assets/dropdown/js/nav-dropdown.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+
+
+</body>
+
+</html>
