@@ -1,8 +1,8 @@
-body {
-    background-image: url("bg-01.png") !important;
-}
+/* transparent top nav bar */
 .cid-rIZbRxmQU1 .navbar {
-
     background: transparent !important;
-
-  }
+}
+/* bg colours */
+.cid-rIZcerIQKH, .cid-rIZkrSSuyJ, .cid-rIZkskKC5v, .cid-rIZksGF9Me, .cid-rIZk2E8TAb, .cid-rIZkKMD1vH {
+    background-color: #1c0221 !important;
+}

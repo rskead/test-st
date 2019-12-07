@@ -8,41 +8,106 @@ body {
   font-family: Rubik;
 }
 .display-1 {
-  font-family: 'Rubik', sans-serif;
+  
+  
+  
+/* intro page title & season titles */
+  
+  
+  font-family: 'Caveat', cursive;
   font-size: 4.25rem;
   font-display: swap;
+
+
+
+
+
+
+
+
 }
 .display-1 > .mbr-iconfont {
   font-size: 6.8rem;
 }
 .display-2 {
-  font-family: 'Rubik', sans-serif;
+
+
+
+/* extra seasons title */
+
+
+  font-family: 'Caveat', cursive;
   font-size: 3rem;
   font-display: swap;
+
+
+
+
+
+
 }
 .display-2 > .mbr-iconfont {
   font-size: 4.8rem;
 }
 .display-4 {
-  font-family: 'Rubik', sans-serif;
+
+
+
+/* top nav links */
+
+
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-display: swap;
+
+
+
+
+
+
 }
 .display-4 > .mbr-iconfont {
   font-size: 1.6rem;
 }
 .display-5 {
-  font-family: 'Rubik', sans-serif;
+
+
+
+
+
+
+
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-display: swap;
+
+
+
+
+
+
 }
 .display-5 > .mbr-iconfont {
   font-size: 2.4rem;
 }
 .display-7 {
-  font-family: 'Rubik', sans-serif;
+
+
+
+/* extra seasons paragraph text */
+
+
+
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-display: swap;
+
+
+
+
+
+
+
 }
 .display-7 > .mbr-iconfont {
   font-size: 1.6rem;
@@ -1119,9 +1184,13 @@ section.lazy-placeholder:after {
 }
 .cid-rIZcerIQKH {
 
-/* intro to spring, beginning of year */
 
-  background: linear-gradient(#f7f3e3, #247ba0);
+
+
+
+/* intro */
+
+  background-color: #1c0221;
 
 
 
@@ -1136,10 +1205,12 @@ section.lazy-placeholder:after {
 
 
 
-/* winter to spring */
 
 
-  background: linear-gradient(#247ba0, #ed7b84);
+/* spring */
+
+
+  background-color: #1c0221 !important;
 
 
 
@@ -1198,9 +1269,9 @@ section.lazy-placeholder:after {
 
   
 
-/* spring to summer */
+/* summer */
 
-  background: linear-gradient(#ed7b84, #29bf12);
+  background-color: #1c0221 !important;
 
 
 
@@ -1217,9 +1288,9 @@ section.lazy-placeholder:after {
 
 
 
-/* summer to fall*/
+/* fall*/
 
-  background: linear-gradient(#29bf12, #d76a03);
+  background-color: #1c0221 !important;
 
 
 
@@ -1284,10 +1355,10 @@ section.lazy-placeholder:after {
 
 
 
-/* fall to winter */
+/* winter */
 
 
-background: linear-gradient(#d76a03, #247ba0);
+  background-color: #1c0221 !important;
 
 
 
@@ -1306,7 +1377,14 @@ background: linear-gradient(#d76a03, #247ba0);
 
   padding-top: 90px;
   padding-bottom: 90px;
-  background: linear-gradient(45deg, #247ba0, #f7f3e3);
+  background-color: #1c0221 !important;
+
+
+
+
+
+
+
 }
 .cid-rIZkKMD1vH .mbr-section-subtitle {
   font-style: italic;
