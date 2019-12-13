@@ -126,8 +126,7 @@
             AdobeAn.makeResponsive(true, 'both', true, 1, [summer_canvas, summer_reloaderDiv, summer_anim_container, summer_dom_overlay_container]);
             AdobeAn.compositionLoaded(summer_lib.properties.id);
             summer_fnStartAnimation();
-        }
-        function handleComplete(evt, comp) {
+
             // fall
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
             var fall_lib = comp.getLibrary();
@@ -147,8 +146,7 @@
             AdobeAn.makeResponsive(true, 'both', true, 1, [fall_canvas, fall_preloaderDiv, fall_anim_container, fall_dom_overlay_container]);
             AdobeAn.compositionLoaded(fall_lib.properties.id);
             fall_fnStartAnimation();
-        }
-        function handleComplete(evt, comp) {
+
             // winter
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
             var winter_lib = comp.getLibrary();
@@ -162,12 +160,13 @@
             winter_fnStartAnimation = function () {
                 winter_stage.addChild(winter_exportRoot);
                 winter_createjs.Ticker.setFPS(winter_lib.properties.fps);
-                winter_createjs.Ticker.addEventListener("tick",winter_stage);
+                winter_createjs.Ticker.addEventListener("tick", winter_stage);
             }
             //Code to support hidpi screens and responsive scaling.
             AdobeAn.makeResponsive(true, 'both', true, 1, [winter_canvas, winter_preloaderDiv, winter_anim_container, winter_dom_overlay_container]);
             AdobeAn.compositionLoaded(winter_lib.properties.id);
             winter_fnStartAnimation();
+
         }
     </script>
 </head>
