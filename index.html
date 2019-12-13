@@ -91,21 +91,21 @@
             summer_dom_overlay_container = document.getElementById("summer_dom_overlay_container");
             var summer_comp = AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
             var summer_lib = summer_comp.getLibrary();
-            handleComplete({}, summer_comp);
+            handleComplete({}, summer_comp, fall_comp, winter_comp);
             //   fall
             fall_canvas = document.getElementById("fall_canvas");
             fall_anim_container = document.getElementById("fall_animation_container");
             fall_dom_overlay_container = document.getElementById("fall_dom_overlay_container");
             var fall_comp = AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
             var fall_lib = fall_comp.getLibrary();
-            handleComplete({}, fall_comp);
+            // handleComplete({}, fall_comp);
             // winter
             winter_canvas = document.getElementById("winter_canvas");
             winter_anim_container = document.getElementById("winter_animation_container");
             winter_dom_overlay_container = document.getElementById("winter_dom_overlay_container");
             var winter_comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
             var winter_lib = winter_comp.getLibrary();
-            handleComplete({}, winter_comp);
+            // handleComplete({}, winter_comp);
         }
         function handleComplete(evt, summer_comp, fall_comp, winter_comp) {
             // summer
