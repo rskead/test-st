@@ -1,0 +1,19 @@
+﻿{"frames": {
+
+"CachedTexturedBitmap_314":
+{
+	"frame": {"x":0,"y":0,"w":1422,"h":1304},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1422,"h":1304},
+	"sourceSize": {"w":1422,"h":1304}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "19.2.1.408",
+	"image": "winter_new_atlas_11.png",
+	"format": "RGB8",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}
