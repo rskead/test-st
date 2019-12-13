@@ -30,27 +30,27 @@ function init() {
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
 	var comp=AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
-	var lib2=comp.getLibrary();
+	var lib=comp.getLibrary();
 	handleComplete({},comp);
 }
 function handleComplete(evt,comp) {
 	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib2=comp.getLibrary();
+	var lib=comp.getLibrary();
 	var ss=comp.getSpriteSheet();
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new lib2.fall();
-	stage = new lib2.Stage(canvas);	
+	exportRoot = new lib.fall();
+	stage = new lib.Stage(canvas);	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
-		createjs.Ticker.setFPS(lib2.properties.fps);
+		createjs.Ticker.setFPS(lib.properties.fps);
 		createjs.Ticker.addEventListener("tick", stage);
 	}	    
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(lib2.properties.id);
+	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
 }
 </script>
