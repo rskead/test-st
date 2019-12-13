@@ -103,7 +103,7 @@
             //Registers the "tick" event listener.
             summer_fnStartAnimation = function () {
                 summer_stage.addChild(summer_exportRoot);
-                createjs.Ticker.setFPS(lib.properties.fps);
+                createjs.Ticker.setFPS(summer_lib.properties.fps);
                 createjs.Ticker.addEventListener("tick", summer_stage);
             }
             //Code to support hidpi screens and responsive scaling.
