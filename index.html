@@ -91,20 +91,20 @@
             var comp = AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
             var summer_lib = comp.getLibrary();
             handleComplete({}, comp);
-            //   fall
-            canvas = document.getElementById("fall_canvas");
-            anim_container = document.getElementById("fall_animation_container");
-            dom_overlay_container = document.getElementById("fall_dom_overlay_container");
-            var comp = AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
-            var fall_lib = comp.getLibrary();
-            handleComplete({}, comp);
-            // winter
-            canvas = document.getElementById("winter_canvas");
-            anim_container = document.getElementById("winter_animation_container");
-            dom_overlay_container = document.getElementById("winter_dom_overlay_container");
-            var comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
-            var winter_lib = comp.getLibrary();
-            handleComplete({}, comp);
+            // //   fall
+            // canvas = document.getElementById("fall_canvas");
+            // anim_container = document.getElementById("fall_animation_container");
+            // dom_overlay_container = document.getElementById("fall_dom_overlay_container");
+            // var comp = AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
+            // var fall_lib = comp.getLibrary();
+            // handleComplete({}, comp);
+            // // winter
+            // canvas = document.getElementById("winter_canvas");
+            // anim_container = document.getElementById("winter_animation_container");
+            // dom_overlay_container = document.getElementById("winter_dom_overlay_container");
+            // var comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
+            // var winter_lib = comp.getLibrary();
+            // handleComplete({}, comp);
         }
         function handleComplete(evt, comp) {
             // summer
@@ -127,48 +127,48 @@
             AdobeAn.compositionLoaded(summer_lib.properties.id);
             summer_fnStartAnimation();
         }
-        function handleComplete(evt, comp) {
-            // fall
-            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var fall_lib = comp.getLibrary();
-            var ss = comp.getSpriteSheet();
-            var preloaderDiv = document.getElementById("fall__preload_div_");
-            preloaderDiv.style.display = 'none';
-            canvas.style.display = 'block';
-            exportRoot = new fall_lib.fall();
-            stage = new fall_lib.Stage(canvas);
-            //Registers the "tick" event listener.
-            fnStartAnimation = function () {
-                stage.addChild(exportRoot);
-                fall_createjs.Ticker.setFPS(fall_lib.properties.fps);
-                fall_createjs.Ticker.addEventListener("tick", stage);
-            }
-            //Code to support hidpi screens and responsive scaling.
-            AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
-            AdobeAn.compositionLoaded(fall_lib.properties.id);
-            fnStartAnimation();
-        }
-        function handleComplete(evt, comp) {
-            // winter
-            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var winter_lib = comp.getLibrary();
-            var ss = comp.getSpriteSheet();
-            var preloaderDiv = document.getElementById("winter__preload_div_");
-            preloaderDiv.style.display = 'none';
-            canvas.style.display = 'block';
-            exportRoot = new winter_lib.winter();
-            stage = new winter_lib.Stage(canvas);
-            //Registers the "tick" event listener.
-            fnStartAnimation = function () {
-                stage.addChild(exportRoot);
-                winter_createjs.Ticker.setFPS(winter_lib.properties.fps);
-                winter_createjs.Ticker.addEventListener("tick", stage);
-            }
-            //Code to support hidpi screens and responsive scaling.
-            AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
-            AdobeAn.compositionLoaded(winter_lib.properties.id);
-            fnStartAnimation();
-        }
+        // function handleComplete(evt, comp) {
+        //     // fall
+        //     //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        //     var fall_lib = comp.getLibrary();
+        //     var ss = comp.getSpriteSheet();
+        //     var preloaderDiv = document.getElementById("fall__preload_div_");
+        //     preloaderDiv.style.display = 'none';
+        //     canvas.style.display = 'block';
+        //     exportRoot = new fall_lib.fall();
+        //     stage = new fall_lib.Stage(canvas);
+        //     //Registers the "tick" event listener.
+        //     fnStartAnimation = function () {
+        //         stage.addChild(exportRoot);
+        //         fall_createjs.Ticker.setFPS(fall_lib.properties.fps);
+        //         fall_createjs.Ticker.addEventListener("tick", stage);
+        //     }
+        //     //Code to support hidpi screens and responsive scaling.
+        //     AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
+        //     AdobeAn.compositionLoaded(fall_lib.properties.id);
+        //     fnStartAnimation();
+        // }
+        // function handleComplete(evt, comp) {
+        //     // winter
+        //     //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        //     var winter_lib = comp.getLibrary();
+        //     var ss = comp.getSpriteSheet();
+        //     var preloaderDiv = document.getElementById("winter__preload_div_");
+        //     preloaderDiv.style.display = 'none';
+        //     canvas.style.display = 'block';
+        //     exportRoot = new winter_lib.winter();
+        //     stage = new winter_lib.Stage(canvas);
+        //     //Registers the "tick" event listener.
+        //     fnStartAnimation = function () {
+        //         stage.addChild(exportRoot);
+        //         winter_createjs.Ticker.setFPS(winter_lib.properties.fps);
+        //         winter_createjs.Ticker.addEventListener("tick", stage);
+        //     }
+        //     //Code to support hidpi screens and responsive scaling.
+        //     AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
+        //     AdobeAn.compositionLoaded(winter_lib.properties.id);
+        //     fnStartAnimation();
+        // }
     </script>
 </head>
 
