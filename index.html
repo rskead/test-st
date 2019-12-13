@@ -134,14 +134,14 @@
           canvas = document.getElementById("winter_canvas");
           anim_container = document.getElementById("winter_animation_container");
           dom_overlay_container = document.getElementById("winter_dom_overlay_container");
-          var comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
-          var lib = comp.getLibrary();
-          handleComplete({},comp);
+          var winter_comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
+          var lib = winter_comp.getLibrary();
+          handleComplete({},winter_comp);
       }
-      function handleComplete(evt,comp) {
+      function handleComplete(evt,winter_comp) {
           //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-          var lib = comp.getLibrary();
-          var ss = comp.getSpriteSheet();
+          var lib = winter_comp.getLibrary();
+          var ss = winter_comp.getSpriteSheet();
           var preloaderDiv = document.getElementById("_preload_div_");
           preloaderDiv.style.display = 'none';
           canvas.style.display = 'block';
