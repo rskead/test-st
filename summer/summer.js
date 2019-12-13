@@ -43,7 +43,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.next_button_sky, new cjs.Rectangle(-52.3,-48.2,104.69999999999999,96.4), null);
+}).prototype = getMCSymbolPrototype(lib.next_button_sky, cjs.Rectangle(-52.3,-48.2,104.69999999999999,96.4), null);
 
 
 (lib.next_button_night = function(mode,startPosition,loop) {
