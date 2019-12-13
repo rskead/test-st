@@ -29,129 +29,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
     <!-- canvases -->
-    <style>
-        #summer_animation_container,
-        #_preload_div_ {
-            position: absolute;
-            margin: auto;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-        }
-
-        #fall_animation_container,
-        #_preload_div_ {
-            position: absolute;
-            margin: auto;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-        }
-
-        #winter_animation_container,
-        #_preload_div_ {
-            position: absolute;
-            margin: auto;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-        }
-    </style>
     
-
-    <script>
-        var summer_canvas, summer_stage, summer_exportRoot, summer_anim_container, summer_dom_overlay_container, summer_fnStartAnimation;
-        var fall_canvas, fall_stage, fall_exportRoot, fall_anim_container, fall_dom_overlay_container, fall_fnStartAnimation;
-        var winter_canvas, winter_stage, winter_exportRoot, winter_anim_container, winter_dom_overlay_container, winter_fnStartAnimation;
-        function init() {
-            //   summer
-            summer_canvas = document.getElementById("summer_canvas");
-            summer_anim_container = document.getElementById("summer_animation_container");
-            summer_dom_overlay_container = document.getElementById("summer_dom_overlay_container");
-            var summer_comp = AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
-            var summer_lib = summer_comp.getLibrary();
-            handleComplete({}, summer_comp);
-            //   fall
-            fall_canvas = document.getElementById("fall_canvas");
-            fall_anim_container = document.getElementById("fall_animation_container");
-            fall_dom_overlay_container = document.getElementById("fall_dom_overlay_container");
-            var fall_comp = AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
-            var fall_lib = fall_comp.getLibrary();
-            handleComplete({}, fall_comp);
-            // winter
-            winter_canvas = document.getElementById("winter_canvas");
-            winter_anim_container = document.getElementById("winter_animation_container");
-            winter_dom_overlay_container = document.getElementById("winter_dom_overlay_container");
-            var winter_comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
-            var winter_lib = winter_comp.getLibrary();
-            handleComplete({}, winter_comp);
-        }
-        // summer
-        function handleComplete(evt, summer_comp, fall_comp, winter_comp) {
-            // summer
-            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var summer_lib = summer_comp.getLibrary();
-            var summer_ss = summer_comp.getSpriteSheet();
-            var summer_preloaderDiv = document.getElementById("_preload_div_");
-            summer_preloaderDiv.style.display = 'none';
-            summer_canvas.style.display = 'block';
-            summer_exportRoot = new summer_lib.summer();
-            summer_stage = new summer_lib.Stage(summer_canvas);
-            //Registers the "tick" event listener.
-            summer_fnStartAnimation = function () {
-                summer_stage.addChild(summer_exportRoot);
-                createjs.Ticker.setFPS(summer_lib.properties.fps);
-                createjs.Ticker.addEventListener("tick", summer_stage);
-            }
-            //Code to support hidpi screens and responsive scaling.
-            AdobeAn.makeResponsive(true, 'both', true, 1, [summer_canvas, summer_preloaderDiv, summer_anim_container, summer_dom_overlay_container]);
-            AdobeAn.compositionLoaded(summer_lib.properties.id);
-            summer_fnStartAnimation();
-            
-            // fall
-            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var fall_lib = fall_comp.getLibrary();
-            var fall_ss = fall_comp.getSpriteSheet();
-            var fall_preloaderDiv = document.getElementById("_preload_div_");
-            fall_preloaderDiv.style.display = 'none';
-            fall_canvas.style.display = 'block';
-            fall_exportRoot = new fall_lib.fall();
-            fall_stage = new fall_lib.Stage(fall_canvas);
-            //Registers the "tick" event listener.
-            fall_fnStartAnimation = function () {
-                fall_stage.addChild(fall_exportRoot);
-                createjs.Ticker.setFPS(fall_lib.properties.fps);
-                createjs.Ticker.addEventListener("tick", fall_stage);
-            }
-            //Code to support hidpi screens and responsive scaling.
-            AdobeAn.makeResponsive(true, 'both', true, 1, [fall_canvas, preloaderDiv, fall_anim_container, fall_dom_overlay_container]);
-            AdobeAn.compositionLoaded(fall_lib.properties.id);
-            fall_fnStartAnimation();
-            
-            // winter
-            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var winter_lib = winter_comp.getLibrary();
-            var winter_ss = winter_comp.getSpriteSheet();
-            var winter_preloaderDiv = document.getElementById("_preload_div_");
-            winter_preloaderDiv.style.display = 'none';
-            winter_canvas.style.display = 'block';
-            winter_exportRoot = new winter_lib.winter();
-            stage = new winter_lib.Stage(winter_canvas);
-            //Registers the "tick" event listener.
-            winter_fnStartAnimation = function () {
-                winter_stage.addChild(winter_exportRoot);
-                createjs.Ticker.setFPS(winter_lib.properties.fps);
-                createjs.Ticker.addEventListener("tick", winter_stage);
-            }
-            //Code to support hidpi screens and responsive scaling.
-            AdobeAn.makeResponsive(true, 'both', true, 1, [winter_canvas, winter_preloaderDiv, winter_anim_container, winter_dom_overlay_container]);
-            AdobeAn.compositionLoaded(winter_lib.properties.id);
-            winter_fnStartAnimation();
-        }
-    </script>
 
 </head>
 
@@ -277,19 +155,7 @@
                 </div>
             </div>
         </div> -->
-        <div id="summer_animation_container"
-            style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
-            <canvas id="summer_canvas" width="1920" height="1280"
-                style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-            <div id="summer_dom_overlay_container"
-                style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
-            </div>
-        </div>
-        <div id='_preload_div_'
-            style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>
-            <span style='display: inline-block; height: 100%; vertical-align: middle;'></span>
-            <img src=images/_preloader.gif style='vertical-align: middle; max-height: 100%' />
-        </div>
+        
 
     </section>
 
@@ -304,18 +170,7 @@
                 </div>
             </div>
         </div> -->
-        <div id="fall_animation_container"
-            style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
-            <canvas id="fall_canvas" width="1920" height="1280"
-                style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-            <div id="fall_dom_overlay_container"
-                style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
-            </div>
-        </div>
-        <div id='_preload_div_'
-            style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>
-            <span style='display: inline-block; height: 100%; vertical-align: middle;'></span> <img
-                src=images/_preloader.gif style='vertical-align: middle; max-height: 100%' /></div>
+       
 
     </section>
 
@@ -358,18 +213,7 @@
                 </div>
             </div>
         </div> -->
-        <div id="winter_animation_container"
-            style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
-            <canvas id="winter_canvas" width="1920" height="1280"
-                style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-            <div id="winter_dom_overlay_container"
-                style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
-            </div>
-        </div>
-        <div id='_preload_div_'
-            style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>
-            <span style='display: inline-block; height: 100%; vertical-align: middle;'></span> <img
-                src=images/_preloader.gif style='vertical-align: middle; max-height: 100%' /></div>
+        
 
 
     </section>
@@ -423,10 +267,7 @@
         </div>
     </section>
 
-    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-    <script src="summer/summer.js"></script>
-    <script src="fall/fall.js"></script>
-    <script src="winter/winter.js"></script>
+   
 
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
     <script src="assets/popper/popper.min.js"></script>
