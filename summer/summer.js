@@ -5480,7 +5480,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 p.nominalBounds = new cjs.Rectangle(950.9,640,969.1999999999999,640.4000000000001);
 // library properties:
 lib.properties = {
-	id: '37B47763193640BDA47C19BE09C0A59D',
+	id1: '37B47763193640BDA47C19BE09C0A59D',
 	width: 1920,
 	height: 1280,
 	fps: 30,
@@ -5530,15 +5530,15 @@ an.compositions['37B47763193640BDA47C19BE09C0A59D'] = {
 	getImages: function() { return img; }
 };
 
-an.compositionLoaded = function(id) {
-	an.bootcompsLoaded.push(id);
+an.compositionLoaded = function(id1) {
+	an.bootcompsLoaded.push(id1);
 	for(var j=0; j<an.bootstrapListeners.length; j++) {
-		an.bootstrapListeners[j](id);
+		an.bootstrapListeners[j](id1);
 	}
 }
 
-an.getComposition = function(id) {
-	return an.compositions[id];
+an.getComposition = function(id1) {
+	return an.compositions[id1];
 }
 
 
