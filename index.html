@@ -84,8 +84,6 @@
         var fall_canvas, fall_stage, fall_exportRoot, fall_anim_container, fall_dom_overlay_container;
         var winter_canvas, winter_stage, winter_exportRoot, winter_anim_container, winter_dom_overlay_container;
         function init() {
-            
-            
             summer_canvas = document.getElementById("summer_canvas");
             fall_canvas = document.getElementById("fall_canvas");
             winter_canvas = document.getElementById("winter_canvas");
@@ -105,9 +103,9 @@
             var summer_lib = summer_comp.getLibrary();
             var fall_lib = fall_comp.getLibrary();
             var winter_lib = winter_comp.getLibrary();
-            handleComplete({}, summer_comp, fall_comp, winter_comp);
-            // handleComplete({}, fall_comp);
-            // handleComplete({}, winter_comp);
+            handleComplete({}, summer_comp);
+            handleComplete({}, fall_comp);
+            handleComplete({}, winter_comp);
         }
         function handleComplete(evt, summer_comp, fall_comp, winter_comp) {
             
@@ -163,7 +161,7 @@
             AdobeAn.compositionLoaded(summer_lib.properties.id);
             AdobeAn.compositionLoaded(fall_lib.properties.id);
             AdobeAn.compositionLoaded(winter_lib.properties.id);
-            
+
             fnStartAnimation();
         }
     </script>
