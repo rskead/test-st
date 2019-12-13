@@ -30,7 +30,7 @@
 
     <!-- summer canvas -->
     <style>
-        #animation_container, #_preload_div_ {
+        #summer_animation_container, #_preload_div_ {
           position:absolute;
           margin:auto;
           left:0;right:0;
@@ -42,12 +42,28 @@
       <script>
       var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
       function init() {
+        //   summer
           canvas = document.getElementById("summer_canvas");
           anim_container = document.getElementById("summer_animation_container");
           dom_overlay_container = document.getElementById("summer_dom_overlay_container");
           var comp=AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
           var lib=comp.getLibrary();
           handleComplete({},comp);
+        //   fall
+        canvas = document.getElementById("fall_canvas");
+          anim_container = document.getElementById("fall_animation_container");
+          dom_overlay_container = document.getElementById("fall_dom_overlay_container");
+          var comp=AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
+          var lib=comp.getLibrary();
+          handleComplete({},comp);
+        // winter
+        canvas = document.getElementById("winter_canvas");
+          anim_container = document.getElementById("winter_animation_container");
+          dom_overlay_container = document.getElementById("winter_dom_overlay_container");
+          var comp=AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
+          var lib=comp.getLibrary();
+          handleComplete({},comp);
+
       }
       function handleComplete(evt,comp) {
           //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
@@ -72,7 +88,7 @@
       </script>
     <!-- fall canvas -->
     <style>
-        #animation_container, #_preload_div_ {
+        #fall_animation_container, #_preload_div_ {
           position:absolute;
           margin:auto;
           left:0;right:0;
@@ -82,15 +98,7 @@
 
       <script src="fall/fall.js"></script>
       <script>
-      var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-      function init() {
-          canvas = document.getElementById("fall_canvas");
-          anim_container = document.getElementById("fall_animation_container");
-          dom_overlay_container = document.getElementById("fall_dom_overlay_container");
-          var comp=AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
-          var lib=comp.getLibrary();
-          handleComplete({},comp);
-      }
+      
       function handleComplete(evt,comp) {
           //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
           var lib=comp.getLibrary();
@@ -114,7 +122,7 @@
       </script>
     <!-- winter canvas -->
     <style>
-        #animation_container, #_preload_div_ {
+        #winter_animation_container, #_preload_div_ {
           position:absolute;
           margin:auto;
           left:0;right:0;
@@ -124,15 +132,7 @@
 
       <script src="winter/winter.js"></script>
       <script>
-      var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-      function init() {
-          canvas = document.getElementById("winter_canvas");
-          anim_container = document.getElementById("winter_animation_container");
-          dom_overlay_container = document.getElementById("winter_dom_overlay_container");
-          var comp=AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
-          var lib=comp.getLibrary();
-          handleComplete({},comp);
-      }
+      
       function handleComplete(evt,comp) {
           //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
           var lib=comp.getLibrary();
