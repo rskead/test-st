@@ -41,9 +41,9 @@
       <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
       <script src="summer/summer.js"></script>
       <script>
-      
+      var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
       function init_summer() {
-        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+        
           canvas = document.getElementById("summer_canvas");
           anim_container = document.getElementById("summer_animation_container");
           dom_overlay_container = document.getElementById("summer_dom_overlay_container");
@@ -52,7 +52,7 @@
           handleComplete({},comp);
       }
       function handleComplete(evt,comp) {
-        var canvas;  
+          
         //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
           var lib1=comp.getLibrary();
           var ss=comp.getSpriteSheet();
