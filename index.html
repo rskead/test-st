@@ -63,12 +63,14 @@
     
 
     <script>
+        var summer_canvas, summer_stage, summer_exportRoot, summer_anim_container, summer_dom_overlay_container, summer_fnStartAnimation;
+        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
         var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
         function init() {
             //   summer
-            canvas = document.getElementById("summer_canvas");
-            anim_container = document.getElementById("summer_animation_container");
-            dom_overlay_container = document.getElementById("summer_dom_overlay_container");
+            summer_canvas = document.getElementById("summer_canvas");
+            summer_anim_container = document.getElementById("summer_animation_container");
+            summer_dom_overlay_container = document.getElementById("summer_dom_overlay_container");
             var comp = AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
             var lib = comp.getLibrary();
             handleComplete({}, comp);
@@ -94,8 +96,29 @@
             var ss = comp.getSpriteSheet();
             var preloaderDiv = document.getElementById("_preload_div_");
             preloaderDiv.style.display = 'none';
+            summer_canvas.style.display = 'block';
+            summer_exportRoot = new lib.summer();
+            summer_stage = new lib.Stage(summer_canvas);
+            //Registers the "tick" event listener.
+            summer_fnStartAnimation = function () {
+                summer_stage.addChild(summer_exportRoot);
+                createjs.Ticker.setFPS(lib.properties.fps);
+                createjs.Ticker.addEventListener("tick", summer_stage);
+            }
+            //Code to support hidpi screens and responsive scaling.
+            AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
+            AdobeAn.compositionLoaded(lib.properties.id);
+            fnStartAnimation();
+        }
+        // fall
+        function handleComplete(evt, comp) {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            var lib = comp.getLibrary();
+            var ss = comp.getSpriteSheet();
+            var preloaderDiv = document.getElementById("_preload_div_");
+            preloaderDiv.style.display = 'none';
             canvas.style.display = 'block';
-            exportRoot = new lib.summer();
+            exportRoot = new lib.fall();
             stage = new lib.Stage(canvas);
             //Registers the "tick" event listener.
             fnStartAnimation = function () {
@@ -108,48 +131,27 @@
             AdobeAn.compositionLoaded(lib.properties.id);
             fnStartAnimation();
         }
-        // // fall
-        // function handleComplete(evt, comp) {
-        //     //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-        //     var lib = comp.getLibrary();
-        //     var ss = comp.getSpriteSheet();
-        //     var preloaderDiv = document.getElementById("_preload_div_");
-        //     preloaderDiv.style.display = 'none';
-        //     canvas.style.display = 'block';
-        //     exportRoot = new lib.fall();
-        //     stage = new lib.Stage(canvas);
-        //     //Registers the "tick" event listener.
-        //     fnStartAnimation = function () {
-        //         stage.addChild(exportRoot);
-        //         createjs.Ticker.setFPS(lib.properties.fps);
-        //         createjs.Ticker.addEventListener("tick", stage);
-        //     }
-        //     //Code to support hidpi screens and responsive scaling.
-        //     AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
-        //     AdobeAn.compositionLoaded(lib.properties.id);
-        //     fnStartAnimation();
-        // }
-        // // winter
-        // function handleComplete(evt, comp) {
-        //     //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-        //     var lib = comp.getLibrary();
-        //     var ss = comp.getSpriteSheet();
-        //     var preloaderDiv = document.getElementById("_preload_div_");
-        //     preloaderDiv.style.display = 'none';
-        //     canvas.style.display = 'block';
-        //     exportRoot = new lib.winter();
-        //     stage = new lib.Stage(canvas);
-        //     //Registers the "tick" event listener.
-        //     fnStartAnimation = function () {
-        //         stage.addChild(exportRoot);
-        //         createjs.Ticker.setFPS(lib.properties.fps);
-        //         createjs.Ticker.addEventListener("tick", stage);
-        //     }
-        //     //Code to support hidpi screens and responsive scaling.
-        //     AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
-        //     AdobeAn.compositionLoaded(lib.properties.id);
-        //     fnStartAnimation();
-        // }
+        // winter
+        function handleComplete(evt, comp) {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            var lib = comp.getLibrary();
+            var ss = comp.getSpriteSheet();
+            var preloaderDiv = document.getElementById("_preload_div_");
+            preloaderDiv.style.display = 'none';
+            canvas.style.display = 'block';
+            exportRoot = new lib.winter();
+            stage = new lib.Stage(canvas);
+            //Registers the "tick" event listener.
+            fnStartAnimation = function () {
+                stage.addChild(exportRoot);
+                createjs.Ticker.setFPS(lib.properties.fps);
+                createjs.Ticker.addEventListener("tick", stage);
+            }
+            //Code to support hidpi screens and responsive scaling.
+            AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, preloaderDiv, anim_container, dom_overlay_container]);
+            AdobeAn.compositionLoaded(lib.properties.id);
+            fnStartAnimation();
+        }
     </script>
 
 </head>
