@@ -21,6 +21,11 @@
 	top:0;bottom:0;
   }
 </style>
+<script>
+	// change the default namespace for the CreateJS libraries:
+	var fall_createjs = fall_createjs||{};
+	var createjs = fall_createjs;
+</script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="fall.js"></script>
 <script>
@@ -30,27 +35,27 @@ function init() {
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
 	var comp=AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
-	var lib=comp.getLibrary();
+	var fall_lib=comp.getLibrary();
 	handleComplete({},comp);
 }
 function handleComplete(evt,comp) {
 	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib=comp.getLibrary();
+	var fall_lib=comp.getLibrary();
 	var ss=comp.getSpriteSheet();
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new lib.fall();
-	stage = new lib.Stage(canvas);	
+	exportRoot = new fall_lib.fall();
+	stage = new fall_lib.Stage(canvas);	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
-		createjs.Ticker.setFPS(lib.properties.fps);
-		createjs.Ticker.addEventListener("tick", stage);
+		fall_createjs.Ticker.setFPS(fall_lib.properties.fps);
+		fall_createjs.Ticker.addEventListener("tick", stage);
 	}	    
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(lib.properties.id);
+	AdobeAn.compositionLoaded(fall_lib.properties.id);
 	fnStartAnimation();
 }
 </script>
@@ -62,6 +67,6 @@ function handleComplete(evt,comp) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=fall_images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
