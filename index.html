@@ -112,8 +112,8 @@
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
             var summer_lib = summer_comp.getLibrary();
             var ss = summer_comp.getSpriteSheet();
-            var preloaderDiv = document.getElementById("summer__preload_div_");
-            preloaderDiv.style.display = 'none';
+            var summer_preloaderDiv = document.getElementById("summer__preload_div_");
+            summer_preloaderDiv.style.display = 'none';
             summer_canvas.style.display = 'block';
             summer_exportRoot = new summer_lib.summer();
             summer_stage = new summer_lib.Stage(summer_canvas);
