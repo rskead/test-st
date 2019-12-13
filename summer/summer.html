@@ -21,11 +21,6 @@
 	top:0;bottom:0;
   }
 </style>
-<script>
-	// change the default namespace for the CreateJS libraries:
-	var summer_createjs = summer_createjs||{};
-	var createjs = summer_createjs;
-</script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="summer.js"></script>
 <script>
@@ -35,27 +30,27 @@ function init() {
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
 	var comp=AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
-	var summer_lib=comp.getLibrary();
+	var lib1=comp.getLibrary();
 	handleComplete({},comp);
 }
 function handleComplete(evt,comp) {
 	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var summer_lib=comp.getLibrary();
+	var lib1=comp.getLibrary();
 	var ss=comp.getSpriteSheet();
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new summer_lib.summer();
-	stage = new summer_lib.Stage(canvas);	
+	exportRoot = new lib1.summer();
+	stage = new lib1.Stage(canvas);	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
-		summer_createjs.Ticker.setFPS(summer_lib.properties.fps);
-		summer_createjs.Ticker.addEventListener("tick", stage);
+		createjs.Ticker.setFPS(lib1.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
 	}	    
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(summer_lib.properties.id);
+	AdobeAn.compositionLoaded(lib1.properties.id);
 	fnStartAnimation();
 }
 </script>

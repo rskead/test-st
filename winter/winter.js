@@ -8408,7 +8408,7 @@ an.makeResponsive = function(isResp, respDim, isScale, scaleType, domContainers)
 	window.addEventListener('resize', resizeCanvas);		
 	resizeCanvas();		
 	function resizeCanvas() {			
-		var w = winter_lib.properties.width, h = winter_lib.properties.height;			
+		var w = lib3.properties.width, h = lib3.properties.height;			
 		var iw = window.innerWidth, ih=window.innerHeight;			
 		var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
 		if(isResp) {                
@@ -8442,5 +8442,5 @@ an.makeResponsive = function(isResp, respDim, isScale, scaleType, domContainers)
 }
 
 
-})(winter_createjs = winter_createjs||{}, AdobeAn = AdobeAn||{});
-var winter_createjs, AdobeAn;
+})(createjs = createjs||{}, AdobeAn = AdobeAn||{});
+var createjs, AdobeAn;

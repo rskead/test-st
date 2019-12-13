@@ -21,11 +21,6 @@
 	top:0;bottom:0;
   }
 </style>
-<script>
-	// change the default namespace for the CreateJS libraries:
-	var winter_createjs = winter_createjs||{};
-	var createjs = winter_createjs;
-</script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="winter.js"></script>
 <script>
@@ -35,27 +30,27 @@ function init() {
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
 	var comp=AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
-	var winter_lib=comp.getLibrary();
+	var lib3=comp.getLibrary();
 	handleComplete({},comp);
 }
 function handleComplete(evt,comp) {
 	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var winter_lib=comp.getLibrary();
+	var lib3=comp.getLibrary();
 	var ss=comp.getSpriteSheet();
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new winter_lib.winter();
-	stage = new winter_lib.Stage(canvas);	
+	exportRoot = new lib3.winter();
+	stage = new lib3.Stage(canvas);	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
-		winter_createjs.Ticker.setFPS(winter_lib.properties.fps);
-		winter_createjs.Ticker.addEventListener("tick", stage);
+		createjs.Ticker.setFPS(lib3.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
 	}	    
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(winter_lib.properties.id);
+	AdobeAn.compositionLoaded(lib3.properties.id);
 	fnStartAnimation();
 }
 </script>

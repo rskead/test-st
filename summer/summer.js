@@ -5480,7 +5480,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 p.nominalBounds = new cjs.Rectangle(950.9,640,969.1999999999999,640.4000000000001);
 // library properties:
 lib.properties = {
-	id1: '37B47763193640BDA47C19BE09C0A59D',
+	id: '37B47763193640BDA47C19BE09C0A59D',
 	width: 1920,
 	height: 1280,
 	fps: 30,
@@ -5530,15 +5530,15 @@ an.compositions['37B47763193640BDA47C19BE09C0A59D'] = {
 	getImages: function() { return img; }
 };
 
-an.compositionLoaded = function(id1) {
-	an.bootcompsLoaded.push(id1);
+an.compositionLoaded = function(id) {
+	an.bootcompsLoaded.push(id);
 	for(var j=0; j<an.bootstrapListeners.length; j++) {
-		an.bootstrapListeners[j](id1);
+		an.bootstrapListeners[j](id);
 	}
 }
 
-an.getComposition = function(id1) {
-	return an.compositions[id1];
+an.getComposition = function(id) {
+	return an.compositions[id];
 }
 
 
@@ -5547,7 +5547,7 @@ an.makeResponsive = function(isResp, respDim, isScale, scaleType, domContainers)
 	window.addEventListener('resize', resizeCanvas);		
 	resizeCanvas();		
 	function resizeCanvas() {			
-		var w = summer_lib.properties.width, h = summer_lib.properties.height;			
+		var w = lib1.properties.width, h = lib1.properties.height;			
 		var iw = window.innerWidth, ih=window.innerHeight;			
 		var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
 		if(isResp) {                
@@ -5581,5 +5581,5 @@ an.makeResponsive = function(isResp, respDim, isScale, scaleType, domContainers)
 }
 
 
-})(summer_createjs = summer_createjs||{}, AdobeAn = AdobeAn||{});
-var summer_createjs, AdobeAn;
+})(createjs = createjs||{}, AdobeAn = AdobeAn||{});
+var createjs, AdobeAn;
