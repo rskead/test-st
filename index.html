@@ -48,9 +48,9 @@
       <script>
       var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
       function init() {
-          canvas = document.getElementById("canvas");
-          anim_container = document.getElementById("animation_container");
-          dom_overlay_container = document.getElementById("dom_overlay_container");
+          canvas = document.getElementById("summer_canvas");
+          anim_container = document.getElementById("summer_animation_container");
+          dom_overlay_container = document.getElementById("summer_dom_overlay_container");
           var comp=AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
           var summer_lib=comp.getLibrary();
           handleComplete({},comp);
@@ -59,7 +59,7 @@
           //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
           var summer_lib=comp.getLibrary();
           var ss=comp.getSpriteSheet();
-          var preloaderDiv = document.getElementById("_preload_div_");
+          var preloaderDiv = document.getElementById("summer__preload_div_");
           preloaderDiv.style.display = 'none';
           canvas.style.display = 'block';
           exportRoot = new summer_lib.summer();
@@ -95,9 +95,9 @@
       <script>
       var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
       function init() {
-          canvas = document.getElementById("canvas");
-          anim_container = document.getElementById("animation_container");
-          dom_overlay_container = document.getElementById("dom_overlay_container");
+          canvas = document.getElementById("fall_canvas");
+          anim_container = document.getElementById("fall_animation_container");
+          dom_overlay_container = document.getElementById("fall_dom_overlay_container");
           var comp=AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
           var fall_lib=comp.getLibrary();
           handleComplete({},comp);
@@ -106,7 +106,7 @@
           //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
           var fall_lib=comp.getLibrary();
           var ss=comp.getSpriteSheet();
-          var preloaderDiv = document.getElementById("_preload_div_");
+          var preloaderDiv = document.getElementById("fall__preload_div_");
           preloaderDiv.style.display = 'none';
           canvas.style.display = 'block';
           exportRoot = new fall_lib.fall();
@@ -142,9 +142,9 @@
       <script>
       var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
       function init() {
-          canvas = document.getElementById("canvas");
-          anim_container = document.getElementById("animation_container");
-          dom_overlay_container = document.getElementById("dom_overlay_container");
+          canvas = document.getElementById("winter_canvas");
+          anim_container = document.getElementById("winter_animation_container");
+          dom_overlay_container = document.getElementById("winter_dom_overlay_container");
           var comp=AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
           var winter_lib=comp.getLibrary();
           handleComplete({},comp);
@@ -153,7 +153,7 @@
           //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
           var winter_lib=comp.getLibrary();
           var ss=comp.getSpriteSheet();
-          var preloaderDiv = document.getElementById("_preload_div_");
+          var preloaderDiv = document.getElementById("winter__preload_div_");
           preloaderDiv.style.display = 'none';
           canvas.style.display = 'block';
           exportRoot = new winter_lib.winter();
@@ -291,12 +291,12 @@
                 </div>
             </div>
         </div> -->
-        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
-            <canvas id="canvas" width="1920" height="1280" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
+        <div id="summer_animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
+            <canvas id="summer_canvas" width="1920" height="1280" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+            <div id="summer_dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
             </div>
         </div>
-        <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=summer_images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
+        <div id='summer__preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=summer_images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
 
     </section>
 
@@ -311,12 +311,12 @@
                 </div>
             </div>
         </div> -->
-        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
-            <canvas id="canvas" width="1920" height="1280" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
+        <div id="fall_animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
+            <canvas id="fall_canvas" width="1920" height="1280" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+            <div id="fall_dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
             </div>
         </div>
-        <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=fall_images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
+        <div id='fall__preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=fall_images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
 
     </section>
 
@@ -359,12 +359,12 @@
                 </div>
             </div>
         </div> -->
-        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
-            <canvas id="canvas" width="1920" height="1280" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
+        <div id="winter_animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
+            <canvas id="winter_canvas" width="1920" height="1280" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+            <div id="winter_dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
             </div>
         </div>
-        <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=winter_images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
+        <div id='winter__preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=winter_images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
 
     </section>
 
