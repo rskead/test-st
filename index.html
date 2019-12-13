@@ -85,32 +85,34 @@
         var winter_canvas, winter_stage, winter_exportRoot, winter_anim_container, winter_dom_overlay_container, winter_fnStartAnimation;
         function init() {
             // summer  
+            comp
+            comp.
             summer_canvas = document.getElementById("summer_canvas");
             summer_anim_container = document.getElementById("summer_animation_container");
             summer_dom_overlay_container = document.getElementById("summer_dom_overlay_container");
-            var comp = AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
-            var summer_lib = comp.getLibrary();
-            handleComplete({}, comp);
+            var summer_comp = AdobeAn.getComposition("37B47763193640BDA47C19BE09C0A59D");
+            var summer_lib = summer_comp.getLibrary();
+            handleComplete({}, summer_comp);
             //   fall
             fall_canvas = document.getElementById("fall_canvas");
             fall_anim_container = document.getElementById("fall_animation_container");
             fall_dom_overlay_container = document.getElementById("fall_dom_overlay_container");
-            var comp = AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
-            var fall_lib = comp.getLibrary();
-            handleComplete({}, comp);
+            var fall_comp = AdobeAn.getComposition("0B62547174284B08A1C5733897FE6F4A");
+            var fall_lib = fall_comp.getLibrary();
+            handleComplete({}, fall_comp);
             // winter
             winter_canvas = document.getElementById("winter_canvas");
             winter_anim_container = document.getElementById("winter_animation_container");
             winter_dom_overlay_container = document.getElementById("winter_dom_overlay_container");
-            var comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
-            var winter_lib = comp.getLibrary();
-            handleComplete({}, comp);
+            var winter_comp = AdobeAn.getComposition("9CC82162615941A0821E06C6D8080FC8");
+            var winter_lib = winter_comp.getLibrary();
+            handleComplete({}, winter_comp);
         }
         function handleComplete(evt, comp) {
             // summer
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var summer_lib = comp.getLibrary();
-            var ss = comp.getSpriteSheet();
+            var summer_lib = summer_comp.getLibrary();
+            var ss = summer_comp.getSpriteSheet();
             var preloaderDiv = document.getElementById("summer__preload_div_");
             preloaderDiv.style.display = 'none';
             summer_canvas.style.display = 'block';
@@ -129,8 +131,8 @@
 
             // fall
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var fall_lib = comp.getLibrary();
-            var ss = comp.getSpriteSheet();
+            var fall_lib = fall_comp.getLibrary();
+            var ss = fall_comp.getSpriteSheet();
             var fall_preloaderDiv = document.getElementById("fall__preload_div_");
             fall_preloaderDiv.style.display = 'none';
             fall_canvas.style.display = 'block';
@@ -149,8 +151,8 @@
 
             // winter
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var winter_lib = comp.getLibrary();
-            var ss = comp.getSpriteSheet();
+            var winter_lib = winter_comp.getLibrary();
+            var ss = winter_comp.getSpriteSheet();
             var winter_preloaderDiv = document.getElementById("winter__preload_div_");
             winter_preloaderDiv.style.display = 'none';
             winter_canvas.style.display = 'block';
