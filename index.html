@@ -52,7 +52,8 @@
           handleComplete({},comp);
       }
       function handleComplete(evt,comp) {
-          //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        var canvas;  
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
           var lib1=comp.getLibrary();
           var ss=comp.getSpriteSheet();
           var preloaderDiv = document.getElementById("_preload_div_");
