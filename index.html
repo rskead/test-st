@@ -28,12 +28,52 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-    <!-- canvases -->
-
+    <!-- canvas -->
+    <style>
+        #animation_container, #_preload_div_ {
+          position:absolute;
+          margin:auto;
+          left:0;right:0;
+          top:0;bottom:0;
+        }
+      </style>
+      <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+      <script src="seasons.js?1576292058725"></script>
+      <script>
+      var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+      function init() {
+          canvas = document.getElementById("canvas");
+          anim_container = document.getElementById("animation_container");
+          dom_overlay_container = document.getElementById("dom_overlay_container");
+          var comp=AdobeAn.getComposition("A968A5151A3F42AC996D236341F7C40D");
+          var lib=comp.getLibrary();
+          handleComplete({},comp);
+      }
+      function handleComplete(evt,comp) {
+          //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+          var lib=comp.getLibrary();
+          var ss=comp.getSpriteSheet();
+          var preloaderDiv = document.getElementById("_preload_div_");
+          preloaderDiv.style.display = 'none';
+          canvas.style.display = 'block';
+          exportRoot = new lib.seasons();
+          stage = new lib.Stage(canvas);	
+          //Registers the "tick" event listener.
+          fnStartAnimation = function() {
+              stage.addChild(exportRoot);
+              createjs.Ticker.setFPS(lib.properties.fps);
+              createjs.Ticker.addEventListener("tick", stage);
+          }	    
+          //Code to support hidpi screens and responsive scaling.
+          AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
+          AdobeAn.compositionLoaded(lib.properties.id);
+          fnStartAnimation();
+      }
+      </script>
     
 </head>
 
-<body onload="init_summer(); init_fall(); init_winter();" style="margin:0px;">
+<body onload="init();" style="margin:0px;">
     <section class="menu cid-rIZbRxmQU1" once="menu" id="menu1-4">
         <nav
             class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
@@ -104,12 +144,16 @@
                 </div>
             </div>
         </div> -->
-        <img src="spring.jpg" alt="Spring Canvas">
+        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1280px">
+            <canvas id="canvas" width="1920" height="1280" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1280px; position: absolute; left: 0px; top: 0px; display: none;">
+            </div>
+        </div>
+        <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1280px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1576292058726 style='vertical-align: middle; max-height: 100%'/></div>
 
     </section>
-
+<!-- 
     <section class="tabs1 cid-rIZkzMGxrx mbr-parallax-background" id="tabs1-l">
-        <!-- fix** tab not needed -->
         <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);"></div>
         <div class="container">
             <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">minoskamin</h2>
@@ -125,26 +169,26 @@
                                         next couple of months.
                                     </p>
                                 </div>
-                                <!-- tab col -->
+  
                             </div>
-                            <!-- row -->
-                        </div>
-                        <!-- tab 1 -->
-                    </div>
-                    <!-- tab -->
-                </div>
-                <!-- actual col -->
-            </div>
-            <!-- media container row -->
-        </div>
-        <!-- container -->
-    </section>
 
-    <section class="header5 cid-rIZkskKC5v mbr-fullscreen" id="header5-j">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+ 
+        </div>
+
+    </section> -->
+
+    <!-- <section class="header5 cid-rIZkskKC5v mbr-fullscreen" id="header5-j"> -->
 
 
         <!-- S U M M E R -->
-
+ 
         <!-- <div class="container">
             <div class="row justify-content-center">
                 <div class="mbr-white col-md-10">
@@ -154,9 +198,9 @@
         </div> -->
         
 
-    </section>
+    <!-- </section> -->
 
-    <section class="header5 cid-rIZksGF9Me mbr-fullscreen" id="header5-k">
+    <!-- <section class="header5 cid-rIZksGF9Me mbr-fullscreen" id="header5-k"> -->
 
         <!-- F A L L -->
 
@@ -169,11 +213,11 @@
         </div> -->
         
 
-    </section>
+    <!-- </section> -->
 
-    <section class="tabs1 cid-rIZkGcLwp0 mbr-parallax-background" id="tabs1-m">
+    <!-- <section class="tabs1 cid-rIZkGcLwp0 mbr-parallax-background" id="tabs1-m"> -->
         <!-- extra season -->
-        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);">
+        <!-- <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);">
         </div>
         <div class="container">
             <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">
@@ -192,14 +236,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- text -->
-                </div>
+                <!-- </div>
             </div>
         </div>
     </section>
 
-    <section class="header5 cid-rIZk2E8TAb mbr-fullscreen" id="header5-h">
+    <section class="header5 cid-rIZk2E8TAb mbr-fullscreen" id="header5-h"> -->
 
         <!-- W I N T E R -->
 
@@ -212,7 +256,7 @@
         </div> -->
         
 
-    </section>
+    <!-- </section> -->
 
     <section class="header11 cid-rIZkKMD1vH" id="header11-n">
 
